@@ -4,5 +4,5 @@
 
 ### With Kubernetes
 1. Run `docker image build --tag=golovchen.com:latest .`
-1. Run `kubectl apply --filename bulletin_service.yaml`
+1. Run `kubectl apply --filename kubernetes.yaml`
 2. Visit http://localhost:30001
