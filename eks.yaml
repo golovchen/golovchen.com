@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: bb-site
-          image: golovchen/golovchen.com:1.1
+          image: golovchen/golovchen.com:1.2
 ---
 apiVersion: v1
 kind: Service
