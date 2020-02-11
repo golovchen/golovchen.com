@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bb-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: golovchen.com
+  template:
+    metadata:
+      labels:
+        name: golovchen.com
+    spec:
+      containers:
+        - name: bb-site
+          image: golovchen/golovchen.com:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: golovchencom-entrypoint
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    name: golovchen.com
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
